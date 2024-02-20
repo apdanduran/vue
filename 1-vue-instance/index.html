@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div id="app">
@@ -14,7 +15,26 @@
         <p>
             {{content}}
         </p>
-        <a v-bind:alt="eduflow.alt" v-bind:duranapdan="owner" v-bind:target="eduflow.target" v-bind:href="url">{{eduflow.title}}</a>
+        <a v-bind:alt="eduflow.alt" v-bind:duranapdan="owner" :target="eduflow.target" :href="url">{{eduflow.title}}</a>
+        <br/>
+        <br/>   
+        <button v-on:click="changeTitle('Bu 1.btn')">
+            Title Değiştir 1 ...
+        </button>
+        <br/>   
+        <button v-on:click="changeTitle('Bu 2.btn')">
+            Title Değiştir 2 ...
+        </button>
+        <br/>   
+        <div class="box" @mousemove="updateCoords('mousemoveee',$event)" @click="changeTitle('Box üzerinden gelen')" />
+        <span>
+            {{
+                coords.x 
+            }},
+            {{
+                coords.y
+            }}
+        </span>
     </div>
     <script src="app.js"> </script>
 </body>
