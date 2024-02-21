@@ -1,4 +1,4 @@
-const { reactive, computed, createApp } = Vue;
+const { reactive, computed, createApp, watch } = Vue;
 
 const app = createApp({
   data() {
@@ -37,7 +37,24 @@ const app = createApp({
       console.log("dec");
       return state.counter2 > 5 ? "BÜYÜK" : "KÜÇÜK";
     });
-
+    watch(
+      () => {
+        return state.counter2;
+      },
+      (newValue, oldValue) => {
+        console.log("counter2 changed from", oldValue, "to", newValue);
+        // Burada istediğiniz işlemleri gerçekleştirebilirsiniz.
+      },
+    );
+    watch(
+        () => {
+          return state.counter;
+        },
+        (newValue, oldValue) => {
+          console.log("counter changed from", oldValue, "to", newValue);
+          // Burada istediğiniz işlemleri gerçekleştirebilirsiniz.
+        },
+      );
     return {
       state,
       bigOrSmall1,

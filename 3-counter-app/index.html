@@ -17,8 +17,8 @@
         <div class="col-2 card p-2">
           <h3 class="text-center">{{state.counter}}</h3>
           <div class="d-flex justify-content-center align-items-center">
-            <button @click="increment" class="btn me-2 btn-sm btn-primary">+</button>
-            <button @click="decrement" class="btn btn-sm btn-danger">-</button>
+            <button @click="state.counter++" class="btn me-2 btn-sm btn-primary">+</button>
+            <button @click="state.counter--" class="btn btn-sm btn-danger">-</button>
           </div>
           <div class="alert alert-warning mt-2">{{ bigOrSmall1 }}</div>
         </div>
@@ -33,8 +33,8 @@
         <div class="col-2 card p-2">
           <h3 class="text-center">{{this.counter3}}</h3>
           <div class="d-flex justify-content-center align-items-center">
-            <button @click="this.increment" class="btn me-2 btn-sm btn-primary">+</button>
-            <button @click="this.decrement" class="btn btn-sm btn-danger">-</button>
+            <button @click="increment" class="btn me-2 btn-sm btn-primary">+</button>
+            <button @click="decrement" class="btn btn-sm btn-danger">-</button>
           </div>
           <div class="alert alert-warning mt-2">{{bigOrSmall3() }}</div>
         </div>
