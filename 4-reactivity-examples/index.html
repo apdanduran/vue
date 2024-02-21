@@ -15,7 +15,7 @@
     <div id="app" class="container">
         <div class="row mt-5">
             <div class="col-4 offset-4 p-2 card">
-                <input type="text" v-model="search" @keydown.enter="searchList">
+                <input type="text" v-model="search" >
                 <button class="btn btn-sm btn-primary" @click="searchList">Ara</button>
                 <pre class="mt-3">
                     {{itemList}}
