@@ -1,6 +1,27 @@
 const { reactive, computed, createApp } = Vue;
 
 const app = createApp({
+  data() {
+    return {
+      counter3: 0,
+    };
+  },
+  methods: {
+    increment() {
+      console.log("inc");
+      this.counter3++;
+    },
+
+    decrement() {
+      console.log("dec");
+      this.counter3--;
+    },
+
+    bigOrSmall3() {
+      console.log("dec");
+      return this.counter3 > 5 ? "BÜYÜK" : "KÜÇÜK";
+    },
+  },
   setup() {
     const state = reactive({
       counter: 0,
@@ -17,30 +38,10 @@ const app = createApp({
       return state.counter2 > 5 ? "BÜYÜK" : "KÜÇÜK";
     });
 
-    const increment = () => {
-      state.counter++;
-    };
-
-    const decrement = () => {
-      state.counter--;
-    };
-
-    const increment2 = () => {
-      state.counter2++;
-    };
-
-    const decrement2 = () => {
-      state.counter2--;
-    };
-
     return {
       state,
       bigOrSmall1,
       bigOrSmall2,
-      increment,
-      decrement,
-      increment2,
-      decrement2,
     };
   },
 });
