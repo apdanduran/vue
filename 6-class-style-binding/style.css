@@ -1,0 +1,13 @@
+.box{
+    width: 200px;
+    height: 200px;
+    background: gainsboro;
+}
+
+.red{
+    background-color: red;
+}
+
+.border{
+    border: 5px dashed orange;
+}

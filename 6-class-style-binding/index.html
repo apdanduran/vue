@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>6-class-style-binding</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link
+      rel="stylesheet"
+      href="./style.css"
+      rel="stylesheet"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div id="app">
+      <button @click="showBorder=!showBorder">Border Ekle/Ekleme</button>
+      <button @click="redBG=!redBG">Kırmızı BG Yap.</button>
+      <div class="box" :class="boxClasses"></div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
